@@ -31,7 +31,7 @@ class General(commands.Cog, name="general"):
         if message.channel.name.startswith("temp") and message.author.bot is False:
             await message.delete()
             async with aiohttp.ClientSession() as session:
-                index = random.randint(0, 1)
+                index = message.author.id % 2
                 webhook1 = Webhook.from_url(
                     self.temp1[index],
                     session=session,
