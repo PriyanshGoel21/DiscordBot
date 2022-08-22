@@ -85,6 +85,7 @@ class General(commands.Cog, name="general"):
             "uwu": "owo you furry cunt",
             "ugh": "ughhh",
             "wow": "YA SOOOOO FUCKING SHOCKING :expressionless:",
+            "wao": "YA SOOOOO FUCKING SHOCKING :expressionless:",
             "whos joe": "ligma balls",
             "who's joe": "ligma balls",
             "xd": "rawr xd",
@@ -101,6 +102,8 @@ class General(commands.Cog, name="general"):
             "):": "(:",
             "😂": "damn fam, you got the whole chat laughing 😐😐😐",
             "🤣": "damn fam, you got the whole chat laughing 😐😐😐",
+            "who?": "ur mom",
+            "who": "ur mom",
         }
 
     @commands.Cog.listener()
