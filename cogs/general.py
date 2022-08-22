@@ -115,6 +115,8 @@ class General(commands.Cog, name="general"):
             "<:stare:1001406484321669130>": "<:stare:1001406484321669130>",
             "<:sus:987785307057434644>": "<:sus:987785307057434644>",
             "<:dielaughing:993162875797504122>": "<:dielaughing:993162875797504122>",
+            "thank": "ur welcome",
+            "thanks": "ur welcome",
         }
 
     @commands.Cog.listener()
