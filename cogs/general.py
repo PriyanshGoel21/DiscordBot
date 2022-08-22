@@ -117,6 +117,7 @@ class General(commands.Cog, name="general"):
             "<:dielaughing:993162875797504122>": "<:dielaughing:993162875797504122>",
             "thank": "ur welcome",
             "thanks": "ur welcome",
+            "haha": "HAHAHAHHA",
         }
 
     @commands.Cog.listener()
