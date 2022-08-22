@@ -105,6 +105,10 @@ class General(commands.Cog, name="general"):
             "who?": "ur mom",
             "who": "ur mom",
             "f": "F",
+            "ur mom": "ur mom",
+            "urmom": "ur mom",
+            "yessir": "nosir",
+            "yes sir": "no sir",
         }
 
     @commands.Cog.listener()
