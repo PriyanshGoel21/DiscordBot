@@ -68,7 +68,7 @@ class General(commands.Cog, name="general"):
             "okay": "not okay",
             "ok": "not ok",
             "omg": "Oh my gas-chamber",
-            "oof": "L",
+            "oof": "oof",
             "owo": "uwu you furry cunt",
             "please stop": "**NEVER**<:veryangryyikes:850141408156581919>",
             "pog": "poggers",
