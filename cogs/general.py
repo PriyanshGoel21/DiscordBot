@@ -33,6 +33,7 @@ class General(commands.Cog, name="general"):
             "bruh": "bruh",
             "bitch": "you're my whore so **shut the fuck up**",
             "bye": "bye, hope we never see you again",
+            "i go bai": "bye, hope we never see you again",
             "daddy": "ya I'm your daddy now get on your knees and give daddy a head you slut",
             "damnit": "cry about it",
             "epic": "ya bro that's an epic gamer moment",
@@ -109,6 +110,11 @@ class General(commands.Cog, name="general"):
             "urmom": "ur mom",
             "yessir": "nosir",
             "yes sir": "no sir",
+            "<:areebhai:997769505935724654>": "<:areebhai:997769505935724654>",
+            "<:kissmebro:1005816674840215613>": "<:kissmebro:1005816674840215613>",
+            "<:stare:1001406484321669130>": "<:stare:1001406484321669130>",
+            "<:sus:987785307057434644>": "<:sus:987785307057434644>",
+            "<:dielaughing:993162875797504122>": "<:dielaughing:993162875797504122>",
         }
 
     @commands.Cog.listener()
