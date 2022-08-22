@@ -26,8 +26,35 @@ class General(commands.Cog, name="general"):
             "https://discord.com/api/webhooks/1010182504826818702/-VI1xi9LpnU2LanQZK35lkdpZViUlNlSX1rI5ChRO0f8hE1TOgyoxZIkfZspv_m09pwc",
         ]
 
+        self.trigger_words = {
+            "aww": "that's so cute right !!!",
+            "awww": "that's so cute right !!!",
+            "asshole": "ur mom's",
+            "bruh": "bruh",
+            "bitch": "you're my whore so **shut the fuck up**",
+            "bye": "bye, hope we never see you again",
+            "daddy": "ya I'm your daddy now get on your knees and give daddy a head you slut",
+            "damnit": "cry about it",
+            "epic": "ya bro that's an epic gamer moment",
+            "fuck": "PLEASE don't swear this is a hindu server",
+            "fuck me": "I'll fuck you with my 69 inch cock, i bet you'd love that you slut",
+            "fuck off": "sure let's have a fuck off, oh wait we can't you got no one to fuck bitch :middle_finger:",
+            "fuck you": "fuck me yourself, pussy",
+            "gay": "your mom's gay, bitch",
+            "good morning": "good night",
+            "hey": "~~bey~~ bye",
+            "hello": "hello, NOW GO KYS",
+            "hello there": "general kenobi is that you???",
+            "hi": "bye",
+        }
+
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message):
+        if message.author.bot:
+            return
+        elif reply := self.trigger_words[message.content.lower()]:
+            await message.reply(reply)
+
         if message.channel.name.startswith("temp") and message.author.bot is False:
             await message.delete()
             async with aiohttp.ClientSession() as session:
