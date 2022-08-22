@@ -124,11 +124,40 @@ class General(commands.Cog, name="general"):
     async def on_message(self, message: discord.Message):
         if message.author.bot:
             return
-        elif reply := self.trigger_words[message.content.lower()]:
-            await message.reply(reply)
+        content = message.content
+
         if message.author.id == 490458548422311937:
-            if random.randint(1, 25) == 2:
+            if random.randint(1, 50) == 2:
                 await message.reply("Neet results?")
+
+        if content == "im gay":
+            await message.reply("📸")
+            await message.channel.send("Baited, there is no turing off this bot")
+
+        # if reply := self.trigger_words[content.lower()]:
+        #     await message.reply(reply)
+        #     async with self.bot.db_pool.acquire() as connection:
+        #         connection: asyncpg.Connection
+        #         response = await connection.fetchval(
+        #             """
+        #         SELECT * FROM trigger WHERE user_id = $1
+        #         """,
+        #             message.author.id,
+        #         )
+        #         if response is None:
+        #             try:
+        #                 await connection.execute(
+        #                     """
+        #                 INSERT into trigger(user_id)  VALUES ($1)
+        #                 """,
+        #                     message.author.id,
+        #                 )
+        #                 await message.author.send(
+        #                     "Hey! looks like you triggered an automatic bot response. To turn this off type `im gay` below."
+        #                 )
+        #             except Exception as E:
+        #                 print(E)
+
         if message.channel.name.startswith("temp") and message.author.bot is False:
             await message.delete()
             async with aiohttp.ClientSession() as session:
