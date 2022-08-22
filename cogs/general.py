@@ -125,7 +125,9 @@ class General(commands.Cog, name="general"):
             return
         elif reply := self.trigger_words[message.content.lower()]:
             await message.reply(reply)
-
+        if message.author.id == 490458548422311937:
+            if random.randint(1, 25) == 2:
+                await message.reply("Neet results?")
         if message.channel.name.startswith("temp") and message.author.bot is False:
             await message.delete()
             async with aiohttp.ClientSession() as session:
