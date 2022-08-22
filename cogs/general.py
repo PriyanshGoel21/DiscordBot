@@ -28,10 +28,6 @@ class General(commands.Cog, name="general"):
 
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message):
-        if message.author.id == 787368439991894087:
-            await message.add_reaction("🇮")
-            await message.add_reaction("🇲")
-            await message.add_reaction("🏳️‍🌈")
         if message.channel.name.startswith("temp") and message.author.bot is False:
             await message.delete()
             async with aiohttp.ClientSession() as session:
