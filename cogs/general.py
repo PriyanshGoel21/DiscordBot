@@ -104,6 +104,7 @@ class General(commands.Cog, name="general"):
             "🤣": "damn fam, you got the whole chat laughing 😐😐😐",
             "who?": "ur mom",
             "who": "ur mom",
+            "f": "F",
         }
 
     @commands.Cog.listener()
