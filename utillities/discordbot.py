@@ -5,7 +5,7 @@ from discord.ext import commands
 from typing import Any
 
 
-class DiscordBot(commands.Bot):
+class DiscordBot(commands.AutoShardedBot):
     """A Subclass of `commands.Bot`."""
 
     prefixes: dict

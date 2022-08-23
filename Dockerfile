@@ -5,4 +5,9 @@ WORKDIR /code
 
 COPY . /code/
 
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    libffi-dev \
+    libnacl-dev
+
 RUN pip install -r requirements.txt

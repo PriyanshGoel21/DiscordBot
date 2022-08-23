@@ -15,26 +15,18 @@ class Metrics(commands.Cog, name="metrics"):
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message):
         async with self.bot.db_pool.acquire() as connection:
-            try:
-                await connection.execute(
-                    """
+            await connection.execute(
+                """
                     INSERT INTO messages(message_id, channel_id, author_id, guild_id, created_at, bot) 
                     VALUES ($1, $2, $3, $4, $5, $6)
                     """,
-                    message.id,
-                    message.channel.id,
-                    message.author.id,
-                    message.guild.id,
-                    message.created_at,
-                    message.author.bot,
-                )
-            except Exception as E:
-                log_channel: discord.TextChannel = self.bot.get_channel(
-                    952424006928175114
-                )
-                await log_channel.send(
-                    f"============\n{message.channel.mention}\n============\n{str(E)}"
-                )
+                message.id,
+                message.channel.id,
+                message.author.id,
+                message.guild.id,
+                message.created_at,
+                message.author.bot,
+            )
 
 
 async def setup(bot: DiscordBot):
