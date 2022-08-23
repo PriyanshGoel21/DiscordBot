@@ -129,7 +129,7 @@ class General(commands.Cog, name="general"):
         if message.author.bot:
             return
         elif reply := self.trigger_words[message.content.lower()]:
-            await message.reply(reply, delete_after=10)
+            await message.reply(reply)
 
         if message.author.id == 490458548422311937:
             if random.randint(1, 50) == 2:
