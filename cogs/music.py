@@ -168,7 +168,7 @@ class Music(commands.Cog, name="music"):
         """
 
         if not ctx.voice_state.voice:
-            await ctx.invoke(self._join)
+            await ctx.invoke(self.join)
 
         async with ctx.typing():
             try:
