@@ -7,6 +7,7 @@ import discord
 from discord import Webhook
 from discord.ext import commands
 
+from utillities import bot_has_permissions
 from utillities.discordbot import DiscordBot
 
 
@@ -148,6 +149,16 @@ class General(commands.Cog, name="general"):
                         avatar_url=message.author.display_avatar.url,
                         allowed_mentions=discord.AllowedMentions(everyone=False),
                     )
+
+    @bot_has_permissions(send_messages=True)
+    @commands.hybrid_command(name="ping", description="Ping the bot.")
+    @commands.cooldown(1, 5, commands.BucketType.user)
+    async def ping(self, ctx: commands.Context):
+        """Show latency in seconds & milliseconds"""
+        before = time.monotonic()
+        message = await ctx.send(":ping_pong: Pong!")
+        ping = (time.monotonic() - before) * 1000
+        await message.edit(content=f":ping_pong: Pong! in {int(ping)}ms")
 
 
 async def setup(bot: DiscordBot):
