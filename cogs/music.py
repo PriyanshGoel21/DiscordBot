@@ -60,7 +60,6 @@ class Music(commands.Cog, name="music"):
         await ctx.send(embed=ctx.voice_state.current.create_embed())
 
     @commands.command(name="stop")
-    @commands.has_permissions(manage_guild=True)
     async def stop(self, ctx: commands.Context):
         """Stops playing song and clears the queue."""
 

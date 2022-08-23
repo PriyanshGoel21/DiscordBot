@@ -33,6 +33,10 @@ class General(commands.Cog, name="general"):
     async def on_message(self, message: discord.Message):
         if message.author.bot:
             return
+        if message.author.bot in message.mentions:
+            await message.reply(
+                "Looks like you tagged the wrong Epsilon smh. <@890650629201076224>"
+            )
 
         if message.author.id == 490458548422311937:
             if random.randint(1, 50) == 2:
