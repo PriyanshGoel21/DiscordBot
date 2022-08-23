@@ -120,6 +120,8 @@ class General(commands.Cog, name="general"):
             "thanks": "ur welcome",
             "haha": "hehe",
             "hehe": "haha",
+            "why": "why not?",
+            "why?": "why not?",
         }
 
     @commands.Cog.listener()
