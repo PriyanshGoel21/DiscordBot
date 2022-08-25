@@ -1,12 +1,10 @@
 import math
-import time
 
-import asyncpg
 import discord
 from discord.ext import commands
 
 from utillities.discordbot import DiscordBot
-from utillities.music import VoiceState, VoiceError, YTDLSource, YTDLError, Song
+from utillities.music import VoiceState, YTDLSource, YTDLError, Song
 
 
 class Music(commands.Cog, name="music"):

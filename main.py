@@ -1,14 +1,14 @@
 import asyncio
+import logging
+import logging.handlers
 import os
+from os import listdir
 
 import asyncpg
 import discord
-
+from discord.ext import commands
 
 from utillities.discordbot import DiscordBot
-
-from os import listdir
-from discord.ext import commands
 
 
 class Bot(DiscordBot):
@@ -53,6 +53,8 @@ class Bot(DiscordBot):
 
 
 async def main():
+    logger = logging.getLogger("discord")
+    logger.setLevel(logging.INFO)
     async with asyncpg.create_pool(dsn=os.getenv("DATABASE_DSN")) as pool:
         async with Bot(db_pool=pool) as bot:
             await bot.start(os.getenv("TOKEN"))

@@ -1,8 +1,8 @@
 from datetime import datetime
+from typing import Any
 
 import asyncpg
 from discord.ext import commands
-from typing import Any
 
 
 class DiscordBot(commands.AutoShardedBot):
