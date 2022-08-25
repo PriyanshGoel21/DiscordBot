@@ -2,7 +2,6 @@ import random
 import time
 
 import aiohttp
-import asyncpg
 import discord
 from discord import Webhook
 from discord.ext import commands
@@ -33,14 +32,14 @@ class General(commands.Cog, name="general"):
     async def on_message(self, message: discord.Message):
         if message.author.bot:
             return
-        if message.author.bot in message.mentions:
+        if message.author in message.mentions:
             await message.reply(
                 "Looks like you tagged the wrong Epsilon smh. <@890650629201076224>"
             )
 
         if message.author.id == 490458548422311937:
-            if random.randint(1, 50) == 2:
-                await message.reply("Neet results?")
+            if random.randint(1, 100) == 69:
+                await message.reply("Neet results when?")
 
         if message.channel.name.startswith("temp") and message.author.bot is False:
             await message.delete()
