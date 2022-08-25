@@ -32,7 +32,7 @@ class General(commands.Cog, name="general"):
     async def on_message(self, message: discord.Message):
         if message.author.bot:
             return
-        if message.author in message.mentions:
+        if self.bot.user in message.mentions:
             await message.reply(
                 "Looks like you tagged the wrong Epsilon smh. <@890650629201076224>"
             )
